@@ -1,64 +1,51 @@
 <!DOCTYPE html>
-<!-- saved from url=(0221)file:///D:/%E6%96%87%E6%A1%A3/%E6%A1%8C%E9%9D%A2/AI%E5%8E%9F%E5%9E%8B%E7%B4%A0%E6%9D%90/%E4%BA%A4%E4%BB%98%E4%BA%A7%E5%93%81/%E6%98%8C%E5%B9%B3%E5%AE%89%E5%B1%85%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%80%E6%9C%9F2%EF%BC%89.html -->
-<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>昌平安居项目</title>
+    <title>昌平安居房超市 - 9页面完整版</title>
     <style>
-        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
         }
-
-        /* 整体展示容器：3排布局，每排3个页面 */
+        :root {
+            --primary: #2663FD;
+            --primary-light: #E8F0FF;
+            --white: #fff;
+            --bg: #F5F7FA;
+            --text-main: #1D2129;
+            --text-sub: #86909C;
+            --border: #F0F2F5;
+            --success: #34C759;
+        }
         .demo-wrapper {
-            background-color: #f0f2f5;
+            background: #f0f2f5;
             min-height: 100vh;
             padding: 40px 20px;
         }
         .phone-row {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             gap: 40px;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
             flex-wrap: wrap;
         }
         .phone-row:last-child {
             margin-bottom: 0;
         }
-
-        /* 手机壳容器 严格iPhone尺寸 */
         .phone-container {
             width: 375px;
             height: 812px;
-            background-color: var(--bg);
+            background: var(--bg);
             border-radius: 32px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             overflow: hidden;
             position: relative;
             flex-shrink: 0;
         }
-
-        /* ---------------- 核心色调规范 严格执行 ---------------- */
-        :root {
-            --primary: #2663FD;
-            --primary-light: #E8F0FF;
-            --white: #FFFFFF;
-            --bg: #F5F7FA;
-            --text-main: #1D2129;
-            --text-sub: #86909C;
-            --border: #F0F2F5;
-            --success: #34C759;
-            --warning: #FF9500;
-            --danger: #FF3B30;
-        }
-
-        /* ---------------- 通用组件样式 ---------------- */
-        /* 纵向滚动 隐藏滚动条 */
         .scroll-y {
             overflow-y: auto;
             overflow-x: hidden;
@@ -66,37 +53,8 @@
         .scroll-y::-webkit-scrollbar {
             display: none;
         }
-
-        /* 底部通用菜单栏 首页/找房/我的 */
-        .tab-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background-color: var(--white);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid var(--border);
-            z-index: 100;
-        }
-        .tab-item {
-            text-align: center;
-            color: var(--text-sub);
-            font-size: 14px;
-        }
-        .tab-item.active {
-            color: var(--primary);
-        }
-        .tab-icon {
-            font-size: 22px;
-            margin-bottom: 2px;
-        }
-
-        /* 通用顶部导航栏 */
         .nav-bar {
-            background-color: var(--white);
+            background: var(--white);
             padding: 16px;
             display: flex;
             align-items: center;
@@ -114,12 +72,138 @@
             font-weight: 600;
             color: var(--text-main);
         }
-
-        /* 通用模块标题 */
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--white);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid var(--border);
+        }
+        .tab-item {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+        .tab-item.active {
+            color: var(--primary);
+        }
+        .tab-icon {
+            font-size: 22px;
+            margin-bottom: 2px;
+        }
+        .view-toggle {
+            display: flex;
+            background: var(--primary-light);
+            border-radius: 8px;
+            padding: 2px;
+            margin-left: auto;
+        }
+        .view-toggle-btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            background: none;
+            border-radius: 6px;
+            color: var(--text-sub);
+        }
+        .view-toggle-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+        .map-container {
+            width: 100%;
+            height: 100%;
+            background: url(https://via.placeholder.com/375x752/E8F0FF/2663FD?text=昌平地图) center/cover no-repeat;
+            position: relative;
+        }
+        .map-point {
+            position: absolute;
+            background: var(--primary);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .map-float-card {
+            position: absolute;
+            bottom: 25px;
+            left: 16px;
+            right: 16px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .tag {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .tag-primary {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+        .tag-success {
+            background: #E8FFEA;
+            color: var(--success);
+        }
+        .btn-primary {
+            width: 100%;
+            height: 36px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .btn-outline {
+            padding: 6px 12px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .search-box {
+            margin: 16px;
+            background: #fff;
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+        .filter-select {
+            padding: 6px 8px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 12px;
+            background: #fff;
+        }
+        .fav-community-item {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 12px;
+            background: #fff;
+        }
+        .fav-community-img {
+            width: 100px;
+            height: 80px;
+            border-radius: 12px;
+            background: var(--primary-light);
+        }
         .section-title {
             font-size: 18px;
             font-weight: 600;
-            color: var(--text-main);
             margin: 20px 16px 12px;
             display: flex;
             align-items: center;
@@ -129,518 +213,32 @@
             content: '';
             width: 4px;
             height: 18px;
-            background-color: var(--primary);
+            background: var(--primary);
             border-radius: 2px;
         }
-
-        /* 通用卡片 */
         .card {
-            background-color: var(--white);
+            background: #fff;
             border-radius: 12px;
             margin: 0 16px 12px;
             overflow: hidden;
         }
-
-        /* 通用按钮 */
-        .btn-primary {
-            width: 100%;
-            height: 48px;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-outline {
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            background-color: var(--white);
-        }
-        .btn-outline-gray {
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            border: 1px solid var(--border);
-            color: var(--text-sub);
-            background-color: var(--white);
-        }
-
-        /* 状态标签 */
-        .tag {
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            display: inline-block;
-        }
-        .tag-primary { background-color: var(--primary-light); color: var(--primary); }
-        .tag-success { background-color: #E8FFEA; color: var(--success); }
-        .tag-warning { background-color: #FFF7E8; color: var(--warning); }
-        .tag-danger { background-color: #FFF2F2; color: var(--danger); }
-        .tag-disabled { background-color: var(--border); color: var(--text-sub); }
-
-        /* ---------------- 新增：双价格标签样式 ---------------- */
-        .price-group {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .price-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-        }
-        .price-tag .tag-label {
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-        .price-tag .tag-label.policy {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-        .price-tag .tag-label.excess {
-            background-color: var(--primary-light);
-            color: var(--primary);
-        }
-        .price-tag .price-num {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        /* 列表/地图切换按钮 */
-        .view-toggle {
-            display: flex;
-            background-color: var(--primary-light);
-            border-radius: 8px;
-            padding: 2px;
-            margin-left: auto;
-        }
-        .view-toggle-btn {
-            padding: 8px 16px;
-            font-size: 14px;
-            color: var(--text-sub);
-            background: none;
-            border: none;
-            border-radius: 6px;
-        }
-        .view-toggle-btn.active {
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-        }
-
-        /* ---------------- 页面1：首页 专属样式 ---------------- */
-        .home-banner {
-            width: calc(100% - 32px);
-            height: 180px;
-            margin: 16px;
-            border-radius: 12px;
-            background-image: url('https://wximg.jiugai.net/3a05c213-591a-5c88-444a-8b4cfa2422b2/ArticleContent/ufrotqgb.zu5.jpg?x-oss-process=image/quality,q_80');
-            background-size: cover;
-            background-position: center;
-        }
-        .home-nav {
-            background-color: var(--white);
-            padding: 12px 16px;
-            text-align: center;
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-        .info-item {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-            color: var(--text-main);
-        }
-        .info-item:last-child {
-            border-bottom: none;
-        }
-        .community-scroll {
-            display: flex;
-            gap: 12px;
-            padding: 0 16px 16px;
-            overflow-x: auto;
-        }
-        .community-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        .community-small-card {
-            min-width: 140px;
-            background-color: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .community-small-img {
-            width: 100%;
-            height: 90px;
-            background-color: var(--primary-light);
-            background-size: cover;
-            background-position: center;
-        }
-        .community-small-info {
-            padding: 10px;
-        }
-        .community-small-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 4px;
-        }
-        .community-small-price {
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* ---------------- 页面2：找房-列表模式 ---------------- */
-        .search-box {
-            margin: 16px;
-            background-color: var(--white);
-            padding: 12px 16px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-sub);
-            font-size: 14px;
-        }
-        /* 筛选栏：强制一行，缩小尺寸 */
-        .top-filter-bar {
-            display: flex;
-            gap: 6px;
-            padding: 0 16px 12px;
-            flex-wrap: nowrap;
-            background-color: var(--bg);
-            overflow-x: auto;
-        }
-        .top-filter-bar::-webkit-scrollbar {
-            display: none;
-        }
-        .filter-select {
-            padding: 6px 8px;
-            border-radius: 6px;
-            font-size: 12px;
-            color: var(--text-main);
-            background-color: var(--white);
-            border: 1px solid var(--border);
-            flex: 1;
-            min-width: 50px;
-            white-space: nowrap;
-        }
-        /* 小区列表项：完全匹配收藏样式 */
-        .fav-community-item {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            gap: 12px;
-            background-color: var(--white);
-        }
-        .fav-community-item:last-child {
-            border-bottom: none;
-        }
-        .fav-community-img {
-            width: 100px;
-            height: 80px;
-            border-radius: 12px;
-            background-color: var(--primary-light);
-            flex-shrink: 0;
-            background-size: cover;
-            background-position: center;
-        }
-        .fav-community-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .fav-community-name {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 6px;
-        }
-        .fav-community-desc {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .fav-community-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .fav-community-price {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        /* ---------------- 页面3：找房-地图模式 ---------------- */
-        .map-container {
-            width: 100%;
-            height: 100%;
-            background-image: url('https://wximg.jiugai.net/3a05c213-591a-5c88-444a-8b4cfa2422b2/ArticleContent/0xmmjj35.4hw.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: var(--primary-light);
-            position: relative;
-            z-index: 1;
-        }
-        .map-point {
-            position: absolute;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 6px 10px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(38,99,253,0.3);
-            white-space: nowrap;
-        }
-        .map-point::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 6px solid var(--primary);
-        }
-        .map-float-card {
-            position: absolute;
-            bottom: 25px;
-            left: 16px;
-            right: 16px;
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .locate-btn {
-            position: absolute;
-            top: 80px;
-            right: 16px;
-            width: 44px;
-            height: 44px;
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        /* ---------------- 页面4：小区详情 ---------------- */
-        .detail-banner {
-            width: 100%;
-            height: 200px;
-            background-color: var(--primary-light);
-            background-size: cover;
-            background-position: center;
-            border-radius: 0 0 12px 12px;
-        }
-        .detail-info-card {
-            margin: -12px 16px 16px;
-            padding: 16px;
-            position: relative;
-            z-index: 1;
-        }
-        .detail-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-        .detail-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-main);
-            flex: 1;
-        }
-        .detail-meta {
-            display: flex;
-            gap: 12px;
-            font-size: 14px;
-            color: var(--text-sub);
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-        .house-type-scroll {
-            display: flex;
-            gap: 12px;
-            padding: 0 16px 16px;
-            overflow-x: auto;
-        }
-        .house-type-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        .house-type-tag {
-            padding: 12px 12px;
-            background-color: var(--white);
-            border-radius: 12px;
-            font-size: 14px;
-            color: var(--text-main);
-            flex-shrink: 0;
-            width: 120px;
-        }
-        .house-type-img {
-            width: 100%;
-            height: 80px;
-            background-color: var(--primary-light);
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .house-type-tag .area {
-            font-size: 13px;
-            color: var(--text-sub);
-            margin-top: 4px;
-        }
-        .house-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 0 16px 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .house-info-left {
-            flex: 1;
-        }
-        .house-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 6px;
-        }
-        .house-desc {
-            font-size: 14px;
-            color: var(--text-sub);
-        }
-        .house-price {
-            font-size: 20px;
-            color: var(--primary);
-            font-weight: 700;
-            margin-right: 12px;
-        }
-        /* 新增：小区收藏按钮样式（右上角） */
-        .collect-btn-top {
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 16px;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            background-color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-shrink: 0;
-            cursor: pointer;
-        }
-        /* 新增：查看更多链接样式 */
-        .view-more {
-            font-size: 16px;
-            color: var(--primary);
-            margin-left: auto;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* 新增：户型列表页面样式（左图右文） */
-        .house-type-list-item {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            background-color: var(--white);
-            display: flex;
-            align-items: flex-start;
-        }
-        .house-type-list-img {
-            width: 120px;
-            height: 90px;
-            border-radius: 8px;
-            background-color: var(--primary-light);
-            flex-shrink: 0;
-            margin-right: 16px;
-        }
-        .house-type-list-content {
-            flex: 1;
-        }
-        .house-type-list-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        .house-type-name {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-        .house-type-price {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 700;
-        }
-        .house-type-meta {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin-bottom: 12px;
-        }
-        .house-type-desc {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .house-type-actions {
-            display: flex;
-            gap: 12px;
-        }
-        .vr-btn-small {
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 12px;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            background-color: var(--white);
-            cursor: pointer;
-        }
-
-        /* ---------------- 页面7：我的 ---------------- */
         .user-header {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
             padding: 40px 16px 30px;
             text-align: center;
-            color: var(--white);
+            color: #fff;
         }
         .user-avatar {
             width: 64px;
             height: 64px;
-            background-color: var(--white);
+            background: #fff;
             border-radius: 50%;
             margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 30px;
-        }
-        .user-name {
-            font-size: 17px;
-            font-weight: 600;
+            color: var(--primary);
         }
         .menu-item {
             padding: 16px;
@@ -652,1020 +250,315 @@
         .menu-icon {
             width: 36px;
             height: 36px;
-            background-color: var(--primary-light);
+            background: var(--primary-light);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
             color: var(--primary);
         }
-        .menu-text {
-            flex: 1;
-            font-size: 15px;
-            color: var(--text-main);
-        }
-        .menu-arrow {
-            font-size: 16px;
-            color: var(--text-sub);
-        }
-
-        /* ---------------- 页面8：小区收藏 ---------------- */
-        /* 样式已在上面通用定义 */
-
-        /* ---------------- 页面9：房源收藏 ---------------- */
-        .fav-house-item {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--white);
-        }
-        .fav-house-item:last-child {
-            border-bottom: none;
-        }
-        .fav-house-item.sold {
-            /* 移除背景色，使用默认的白色背景 */
-        }
-        .fav-house-info-left {
-            flex: 1;
-        }
-        .fav-house-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 4px;
-        }
-        .fav-house-desc {
-            font-size: 13px;
-            color: var(--text-sub);
-            margin-bottom: 4px;
-        }
-        .fav-house-price {
-            font-size: 16px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-right: 12px;
-        }
-
-        /* ---------------- VR看房页面样式 ---------------- */
-        .vr-container {
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-light);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            position: relative;
-        }
-        .vr-hotspot {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(38, 99, 253, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-.vr-info-card {
-    position: absolute;
-    bottom: 20px; /* 更贴近底部 */
-    left: 12px;
-    right: 12px;
-    background-color: var(--white);
-    border-radius: 16px; /* 圆角更柔和 */
-    padding: 16px 20px; /* 缩小内边距 */
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12); /* 弱化阴影 */
-}
-.vr-title {
-    font-size: 24px; /* 缩小标题字号 */
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 8px;
-}
-.vr-meta {
-    font-size: 16px; /* 缩小说明文字字号 */
-    color: var(--text-sub);
-    margin-bottom: 6px;
-    line-height: 1.4;
-}
-.vr-meta:last-child {
-    margin-bottom: 0; /* 最后一行去掉下边距 */
-}
-    /* 户型详情页面样式 */
-    .page-content {
-        height: 100%;
-        overflow-y: auto;
-        padding-bottom: 20px;
-    }
-    .house-detail-top {
-        background-color: var(--white);
-        padding: 16px;
-        margin-bottom: 16px;
-    }
-    .house-detail-top .title {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--text-main);
-        margin-bottom: 12px;
-    }
-    .house-detail-top .house-img {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 12px;
-    }
-    .feature-box {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 16px;
-    }
-    .price-box {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 12px;
-        border-top: 1px solid var(--border);
-    }
-    .price-item {
-        flex: 1;
-    }
-    .price-item .label {
-        font-size: 12px;
-        color: var(--text-sub);
-        margin-bottom: 4px;
-    }
-    .price-item .num {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--text-main);
-    }
-    .module-title {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text-main);
-        margin: 0 16px 12px;
-        padding-top: 16px;
-        border-top: 8px solid var(--background);
-    }
-    .house-item {
-        background-color: var(--white);
-        padding: 16px;
-        margin-bottom: 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    .house-info {
-        flex: 1;
-    }
-    .house-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-main);
-        margin-bottom: 4px;
-    }
-    .house-desc {
-        font-size: 12px;
-        color: var(--text-sub);
-        margin-bottom: 8px;
-    }
-    .house-tags {
-        display: flex;
-        gap: 8px;
-    }
-    .house-price {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--text-main);
-        margin-right: 12px;
-    }
     </style>
 </head>
 <body>
-    <div class="demo-wrapper">
-        <!-- ==================== 第一排：3个页面 ==================== -->
-        <div class="phone-row">
-            <!-- ==================== 页面1：找房-地图模式 ==================== -->
-            <div class="phone-container">
-                <div style="height: calc(100% - 60px); position: relative;">
-                    <div class="nav-bar" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10;">
-                        <div class="back-arrow">←</div>
-                        <div class="nav-title">找房</div>
-                        <div class="view-toggle">
-                            <button class="view-toggle-btn active">地图找房</button>
-                            <button class="view-toggle-btn">列表找房</button>
-                        </div>
-                    </div>
-
-                    <div class="map-container">
-                        <div class="map-point" style="top: 180px; left: 80px;">北四村安置房</div>
-                        <div class="map-point" style="top: 240px; left: 200px;">小沙河安置房</div>
-                        <div class="map-point" style="top: 320px; left: 60px;">马池口村定向安置房</div>
-                        <div class="map-point" style="top: 380px; left: 180px;">兆丰家园安置房</div>
-                        <div class="map-point" style="top: 450px; left: 100px;">阿苏卫小汤山项目</div>
-                    </div>
-
-                    <div class="map-float-card" style="z-index: 5;">
-                        <div style="display: flex; gap: 12px; margin-bottom: 12px;">
-                            <div style="width: 80px; height: 60px; background-image: url(&#39;https://via.placeholder.com/80x60/E8F0FF/2663FD?text=兆丰&#39;); border-radius: 8px; background-color: var(--primary-light);"></div>
-                            <div style="flex: 1;">
-                                <div style="font-size: 15px; font-weight: 600; color: var(--text-main); margin-bottom: 2px;">兆丰家园安置房项目</div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-bottom: 4px;">小汤山镇土沟村，顺沙路南侧</div>
-                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                                    <span class="tag tag-success">在售</span>
-                                    <span class="tag tag-primary">三定三限</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 双价格标签 -->
-                        <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto; margin-bottom: 12px;">
-                            <div style="display: flex; align-items: center; gap: 4px;">
-                                <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">6700元/㎡</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 4px;">
-                                <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">25000元/㎡</span>
-                                <span style="font-size: 12px; color: var(--text-sub);">⭐ 1850</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 12px;">
-                            <button class="btn-outline" style="flex: 0 0 40%; max-width: 40%;">⭐ 收藏小区</button>
-                            <button class="btn-primary" style="flex: 1; height: 36px;">查看详情</button>
-                        </div>
+<div class="demo-wrapper">
+    <!-- 第一排 3个页面 -->
+    <div class="phone-row">
+        <!-- 页面1：地图找房 -->
+        <div class="phone-container">
+            <div style="height: calc(100% - 60px); position: relative;">
+                <div class="nav-bar" style="position: absolute;top:0;left:0;right:0;">
+                    <div class="back-arrow">←</div>
+                    <div class="nav-title">找房</div>
+                    <div class="view-toggle">
+                        <button class="view-toggle-btn active">地图找房</button>
+                        <button class="view-toggle-btn">列表找房</button>
                     </div>
                 </div>
-
-                <div class="tab-bar">
-                    <div class="tab-item active">
-                        <div class="tab-icon">🔍</div>
-                        <div>找房</div>
+                <div class="map-container">
+                    <div class="map-point" style="top:180px;left:80px">北四村安置房</div>
+                    <div class="map-point" style="top:240px;left:200px">小沙河安置房</div>
+                    <div class="map-point" style="top:320px;left:60px">马池口村安置房</div>
+                </div>
+                <div class="map-float-card">
+                    <div style="display:flex;gap:12px;margin-bottom:12px">
+                        <div style="width:80px;height:60px;background:var(--primary-light);border-radius:8px"></div>
+                        <div>
+                            <div style="font-weight:600;margin-bottom:4px">兆丰家园安置房</div>
+                            <div style="font-size:12px;color:var(--text-sub);margin-bottom:6px">昌平区小汤山镇</div>
+                            <div><span class="tag tag-success">在售</span> <span class="tag tag-primary">三定三限</span></div>
+                        </div>
                     </div>
-                    <div class="tab-item">
-                        <div class="tab-icon">👤</div>
-                        <div>我的</div>
+                    <div style="display:flex;gap:12px;margin-bottom:12px">
+                        <div><span style="background:var(--primary);color:#fff;padding:2px 6px;border-radius:4px;font-size:10px">可安置</span> <span style="font-weight:600">6700元/㎡</span></div>
+                        <div><span style="background:var(--primary-light);color:var(--primary);padding:2px 6px;border-radius:4px;font-size:10px">超出</span> <span style="font-weight:600">25000元/㎡</span></div>
+                    </div>
+                    <div style="display:flex;gap:12px">
+                        <button class="btn-outline">收藏小区</button>
+                        <button class="btn-primary">查看详情</button>
                     </div>
                 </div>
             </div>
-
-            <!-- ==================== 页面2：找房-列表模式 ==================== -->
-            <div class="phone-container">
-                <div class="scroll-y" style="height: calc(100% - 60px); padding-bottom: 20px;">
-                    <div class="nav-bar">
-                        <div class="back-arrow">←</div>
-                        <div class="nav-title">找房</div>
-                        <div class="view-toggle">
-                            <button class="view-toggle-btn">地图找房</button>
-                            <button class="view-toggle-btn active">列表找房</button>
-                        </div>
-                    </div>
-
-                    <div class="search-box">
-                        🔍 搜索小区名称
-                    </div>
-
-                    <!-- 筛选栏：强制一行，缩小尺寸 -->
-                    <div class="top-filter-bar">
-                        <select class="filter-select">
-                            <option>全部</option>
-                            <option>北七家镇</option>
-                            <option>沙河镇</option>
-                            <option>小汤山镇区</option>                            
-                            <option>马池口镇</option>
-                            <option>南邵镇</option>
-                            <option>东小口镇</option>
-                        </select>
-                        <select class="filter-select">
-                            <option>可安置价格</option>
-                            <option>5000-6000元/㎡</option>
-                            <option>6000-7000元/㎡</option>
-                            <option>7000-8000元/㎡</option>
-                            <option>8000元/㎡以上</option>
-                        </select>
-                        <select class="filter-select">
-                            <option>超出价格</option>
-                            <option>5000-6000元/㎡</option>
-                            <option>6000-7000元/㎡</option>
-                            <option>7000-8000元/㎡</option>
-                            <option>8000元/㎡以上</option>
-                        </select>
-                        <select class="filter-select">
-                            <option selected="">在售</option>
-                            <option>待售</option>
-                            <option>已售罄</option>
-                        </select>
-                        <select class="filter-select">
-                            <option>排序</option>
-                            <option>可安置价格从低到高</option>
-                            <option>可安置价格从高到低</option>
-                            <option>超出价格从低到高</option>
-                            <option>超出价格从高到低</option>
-                            <option>收藏最多</option>
-                            <option>最新上架</option>
-                        </select>
-                    </div>
-
-                    <!-- 找房列表 -->
-                    <div style="background-color: var(--white);">
-                        <div class="fav-community-item">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div class="fav-community-img" style="background-image: url(&#39;https://via.placeholder.com/100x80/E8F0FF/2663FD?text=小区实景&#39;);"></div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-top: 8px; text-align: center;">⭐ 1850</div>
-                                <div style="font-size: 12px; color: var(--text-sub); text-align: center;">👁️ 25000</div>
-                            </div>
-                            <div class="fav-community-info">
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                                        <div class="fav-community-name">鲁疃村定向安置房</div>
-                                        <button style="padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--gray); color: var(--text-sub); background-color: var(--white); cursor: pointer;">⭐ 收藏</button>
-                                    </div>
-                                    <div class="fav-community-desc">北京市昌平区北七家镇鲁疃村</div>
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                        <span class="tag tag-success">在售</span>
-                                        <span class="tag tag-primary">三定三限</span>
-                                    </div>
-                                </div>
-                                <div class="fav-community-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                    <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">6432元/㎡</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">24000元/㎡</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="fav-community-item">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div class="fav-community-img" style="background-image: url(&#39;https://via.placeholder.com/100x80/E8F0FF/2663FD?text=小区实景&#39;);"></div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-top: 8px; text-align: center;">⭐ 7236</div>
-                                <div style="font-size: 12px; color: var(--text-sub); text-align: center;">👁️ 32000</div>
-                            </div>
-                            <div class="fav-community-info">
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                                        <div class="fav-community-name">小沙河安置房</div>
-                                        <button style="padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--gray); color: var(--text-sub); background-color: var(--white); cursor: pointer;">取消收藏</button>
-                                    </div>
-                                    <div class="fav-community-desc">北京市昌平区沙河镇小沙河村</div>
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                        <span class="tag tag-success">在售</span>
-                                        <span class="tag tag-primary">三定三限</span>
-                                    </div>
-                                </div>
-                                <div class="fav-community-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                    <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">6700元/㎡</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">25000元/㎡</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="fav-community-item">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div class="fav-community-img" style="background-image: url(&#39;https://via.placeholder.com/100x80/E8F0FF/2663FD?text=小区实景&#39;);"></div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-top: 8px; text-align: center;">⭐ 5896</div>
-                                <div style="font-size: 12px; color: var(--text-sub); text-align: center;">👁️ 18500</div>
-                            </div>
-                            <div class="fav-community-info">
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                                        <div class="fav-community-name">北七家定向安置房</div>
-                                        <button style="padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--gray); color: var(--text-sub); background-color: var(--white); cursor: pointer;">取消收藏</button>
-                                    </div>
-                                    <div class="fav-community-desc">北京市昌平区北七家镇，定泗路以北</div>
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                        <span class="tag tag-success">在售</span>
-                                        <span class="tag tag-primary">三定三限</span>
-                                    </div>
-                                </div>
-                                <div class="fav-community-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                    <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">5896元/㎡</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">23000元/㎡</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div class="fav-community-item">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div class="fav-community-img" style="background-image: url(&#39;https://via.placeholder.com/100x80/E8F0FF/2663FD?text=小区实景&#39;);"></div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-top: 8px; text-align: center;">⭐ 8040</div>
-                                <div style="font-size: 12px; color: var(--text-sub); text-align: center;">👁️ 29000</div>
-                            </div>
-                            <div class="fav-community-info">
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                                        <div class="fav-community-name">七里渠南北村安置房</div>
-                                        <button style="padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--gray); color: var(--text-sub); background-color: var(--white); cursor: pointer;">⭐ 收藏</button>
-                                    </div>
-                                    <div class="fav-community-desc">北京市昌平区沙河镇七燕路17号院</div>
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                        <span class="tag tag-success">在售</span>
-                                        <span class="tag tag-primary">三定三限</span>
-                                    </div>
-                                </div>
-                                <div class="fav-community-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                    <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">6200元/㎡</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">22000元/㎡</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-</div>
-                    <div style="text-align: center; margin-top: 20px; font-size: 12px; color: var(--text-sub);">
-                        暂无更多
-                    </div>
-   <div></div>
-                </div>
-
-                <div class="tab-bar">
-                    <div class="tab-item active">
-                        <div class="tab-icon">🔍</div>
-                        <div>找房</div>
-                    </div>
-                    <div class="tab-item">
-                        <div class="tab-icon">👤</div>
-                        <div>我的</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==================== 页面3：小区详情 ==================== -->
-            <div class="phone-container">
-                <div class="scroll-y" style="height: calc(100% - 60px); padding-bottom: 20px;">
-                    <div class="nav-bar" style="position: absolute; top: 0; left: 0; right: 0; background: transparent; z-index: 10;">
-                        <div class="back-arrow" style="color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.3);">←</div>
-                        <div class="nav-title" style="color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.3);">小区详情</div>
-                    </div>
-
-                    <div class="detail-banner" style="width: 100%; height: 200px; background-image: url(&#39;https://wximg.jiugai.net/3a05c213-591a-5c88-444a-8b4cfa2422b2/ArticleContent/zwlyumtn.42l.jpg&#39;); background-size: cover; background-position: center;"></div>
-
-                    <div class="card detail-info-card">
-                        <div class="detail-header">
-                            <div style="flex: 1;">
-                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                                    <span class="tag tag-success">在售</span>
-                                    <span class="tag tag-primary">三定三限</span>
-                                </div>
-                                <div class="detail-name">鲁疃村定向安置房</div>
-                            </div>
-                            <button class="collect-btn-top">⭐ 小区收藏</button>
-                        </div>
-                        <div class="detail-meta">
-                            <span>🏗️ 建成：2023年</span>
-                            <span>🏘️ 总户数：1780户</span>
-                            <span>📐 总建面：18.2万㎡</span>
-                        </div>
-                        <div class="detail-meta" style="margin-top: 8px;">
-                            <span>📍 详细地址：北京市昌平区北七家镇鲁疃村，东至鲁疃东路，西至鲁疃路，南至英才南二街</span>
-                        </div>
-                        <!-- 新增：双价格标签 -->
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                            <div class="price-group">
-                                <div class="price-tag">
-                                    <span class="tag-label policy">可安置</span>
-                                    <span class="price-num">6432元/㎡</span>
-                                </div>
-                                <div class="price-tag">
-                                    <span class="tag-label excess">超出</span>
-                                    <span class="price-num">24000元/㎡</span>
-                                </div>
-                            </div>
-                            <div style="font-size: 13px; color: var(--text-sub);">
-                                ⭐ 1850 &nbsp; 👁️ 25000
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 小区配套 -->
-                    <div class="section-title" style="margin-top: 0;">小区配套
-                     <a class="view-more">查看周边</a>
-</div>
-                 <img src="https://wximg.jiugai.net/3a05c213-591a-5c88-444a-8b4cfa2422b2/ArticleContent/vi1z5zrp.fmj.jpg" style="width: 100%; border-radius: 12px; margin-bottom: 12px;" alt="小区配套地图">
-
-                    <!-- 小区户型 -->
-                    <div class="section-title" style="margin-top: 0;">
-                        小区户型
-                        <a class="view-more">查看更多</a>
-                    </div>
-                    <div class="house-type-scroll">
-                        <div class="house-type-tag">
-                            <div class="house-type-img"></div>
-                            <div>一室一厅一卫</div>
-                            <div class="area">建面约55㎡</div>
-                        </div>
-                        <div class="house-type-tag">
-                            <div class="house-type-img"></div>
-                            <div>两室两厅一卫</div>
-                            <div class="area">建面约89㎡</div>
-                        </div>
-                        <div class="house-type-tag">
-                            <div class="house-type-img"></div>
-                            <div>三室两厅一卫</div>
-                            <div class="area">建面约105㎡</div>
-                        </div>
-                    </div>
-
-
-                    <div class="section-title" style="margin-top: 0;">房源列表</div>
-  <!-- 筛选栏：强制一行，缩小尺寸 -->
-                    <div class="top-filter-bar">
-                        <select class="filter-select">
-                            <option>户型</option>
-                            <option>一室一厅一卫</option>
-                            <option>两室两厅一卫</option>
-                            <option>三室两厅一卫</option>
-                            <option>其他户型</option>
-                        </select>
-                        <select class="filter-select">
-                            <option>面积</option>
-                            <option>50-80㎡</option>
-                            <option>81-150㎡</option>
-                            <option>151-350㎡</option>
-                            <option>350㎡以上</option>
-                        </select>
-                        <select class="filter-select">
-                            <option selected="">在售</option>
-                            <option>待售</option>
-                            <option>已售罄</option>
-                        </select>
-                        <select class="filter-select">
-                            <option>排序</option>
-                            <option>收藏最多</option>
-                            <option>最新上架</option>
-                        </select>
-                    </div>
-
-
-                    <!-- 小区房源：只显示总价，不显示单价 -->
-                    <div class="house-card">
-                        <div class="house-info-left">
-                            <div class="house-title">01-0503 | 两室两厅一卫</div>
-                            <div class="house-desc">89㎡ · 5层/18层 · 南北 · 毛坯</div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <div style="font-size: 12px; color: var(--text-sub);">⭐ 320</div>
-                            <button class="btn-outline-gray">已收藏</button>
-                        </div>
-                    </div>
-                    <div class="house-card">
-                        <div class="house-info-left">
-                            <div class="house-title">02-1201 | 三室两厅一卫</div>
-                            <div class="house-desc">105㎡ · 12层/18层 · 南北 · 毛坯</div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <div style="font-size: 12px; color: var(--text-sub);">⭐ 285</div>
-                            <button class="btn-outline-gray">已收藏</button>
-                        </div>
-                    </div>
-                    <div class="house-card">
-                        <div class="house-info-left">
-                            <div class="house-title">050802 | 一室一厅一卫</div>
-                            <div class="house-desc">55㎡ · 8层/18层 · 南 · 毛坯</div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <div style="font-size: 12px; color: var(--text-sub);">⭐ 198</div>
-                            <button class="btn-outline-gray">添加收藏</button>
-                        </div>
-                    </div>
-                    <div class="house-card">
-                        <div class="house-info-left">
-                            <div class="house-title">051505 | 两室两厅一卫</div>
-                            <div class="house-desc">92㎡ · 15层/18层 · 南北 · 毛坯</div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <div style="font-size: 12px; color: var(--text-sub);">⭐ 256</div>
-                            <button class="btn-outline-gray">添加收藏</button>
-                        </div>
-                    </div>
-                    <div class="house-card">
-                        <div class="house-info-left">
-                            <div class="house-title">060307 | 两室两厅一卫</div>
-                            <div class="house-desc">89㎡ · 3层/18层 · 南北 · 简装</div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <div style="font-size: 12px; color: var(--text-sub);">⭐ 310</div>
-                            <button class="btn-outline-gray">添加收藏</button>
-                        </div>
-                    </div>
-                    <div class="house-card">
-                        <div class="house-info-left">
-                            <div class="house-title">071002 | 三室两厅一卫</div>
-                            <div class="house-desc">110㎡ · 10层/18层 · 南北 · 毛坯</div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <div style="font-size: 12px; color: var(--text-sub);">⭐ 275</div>
-                            <button class="btn-outline-gray">添加收藏</button>
-                        </div>
-                    </div>
-                </div>
-
-                
+            <div class="tab-bar">
+                <div class="tab-item active"><div class="tab-icon">🔍</div><div>找房</div></div>
+                <div class="tab-item"><div class="tab-icon">👤</div><div>我的</div></div>
             </div>
         </div>
 
-        <!-- ==================== 第二排：3个页面 ==================== -->
-        <div class="phone-row">
-            <!-- ==================== 页面4：户型列表（左图右文） ==================== -->
-            <div class="phone-container" id="house-type-list">
-                <div class="scroll-y" style="height: 100%; padding-bottom: 20px;">
-                    <div class="nav-bar">
-                        <div class="back-arrow">←</div>
-                        <div class="nav-title">户型列表</div>
+        <!-- 页面2：列表找房 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height: calc(100% - 60px);">
+                <div class="nav-bar">
+                    <div class="back-arrow">←</div>
+                    <div class="nav-title">找房</div>
+                    <div class="view-toggle">
+                        <button class="view-toggle-btn">地图找房</button>
+                        <button class="view-toggle-btn active">列表找房</button>
                     </div>
-
-                    <div style="background-color: var(--white);">
-                        <!-- 户型1 -->
-                        <div class="house-type-list-item">
-                            <div class="house-type-list-img"></div>
-                            <div class="house-type-list-content">
-                                <div class="house-type-list-header">
-                                    <div class="house-type-name">一室一厅一卫</div>
-                                    <button class="vr-btn-small">查看VR</button>
-                                </div>
-                                <div class="house-type-meta">建面约55㎡ · 东边套</div>
-                                <div class="house-type-desc">经典一居室，南北通透，采光充足</div>
-                                <div class="house-type-actions">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 户型2 -->
-                        <div class="house-type-list-item">
-                            <div class="house-type-list-img"></div>
-                            <div class="house-type-list-content">
-                                <div class="house-type-list-header">
-                                    <div class="house-type-name">两室两厅一卫</div>
-                                    <button class="vr-btn-small">查看VR</button>
-                                </div>
-                                <div class="house-type-meta">建面约89㎡ · 西边套</div>
-                                <div class="house-type-desc">主力户型，方正实用，动静分区</div>
-                                <div class="house-type-actions">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 户型3 -->
-                        <div class="house-type-list-item">
-                            <div class="house-type-list-img"></div>
-                            <div class="house-type-list-content">
-                                <div class="house-type-list-header">
-                                    <div class="house-type-name">三室两厅一卫</div>
-                                    <button class="vr-btn-small">查看VR</button>
-                                </div>
-                                <div class="house-type-meta">建面约105㎡ · 中间户</div>
-                                <div class="house-type-desc">改善型三居，全明格局，双卧朝南</div>
-                                <div class="house-type-actions">
-                                    
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="search-box">🔍 搜索小区名称</div>
+                <div style="padding:0 16px 12px;display:flex;gap:6px;overflow-x:auto">
+                    <select class="filter-select"><option>全部区域</option></select>
+                    <select class="filter-select"><option>价格筛选</option></select>
+                    <select class="filter-select"><option>在售状态</option></select>
+                </div>
+                <div class="fav-community-item">
+                    <div class="fav-community-img"></div>
+                    <div style="flex:1">
+                        <div style="font-weight:600;margin-bottom:4px">鲁疃村定向安置房</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">昌平区北七家镇</div>
+                        <div><span class="tag tag-success">在售</span> <span class="tag tag-primary">三定三限</span></div>
+                        <div style="margin-top:8px;color:var(--primary);font-weight:600">6432元/㎡ 起</div>
                     </div>
-                    <div style="text-align: center; margin-top: 20px; font-size: 12px; color: var(--text-sub);">
-                        暂无更多
+                </div>
+                <div class="fav-community-item">
+                    <div class="fav-community-img"></div>
+                    <div style="flex:1">
+                        <div style="font-weight:600;margin-bottom:4px">小沙河安置房</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">昌平区沙河镇</div>
+                        <div><span class="tag tag-success">在售</span> <span class="tag tag-primary">三定三限</span></div>
+                        <div style="margin-top:8px;color:var(--primary);font-weight:600">6700元/㎡ 起</div>
                     </div>
                 </div>
             </div>
-            <!-- ==================== 页面5：VR看房（带底图版） ==================== -->
-            <div class="phone-container" id="vr-page">
-                <div class="vr-container" style="
-                    background-image: url(&#39;https://wximg.jiugai.net/3a05c213-591a-5c88-444a-8b4cfa2422b2/ArticleContent/rwweha1p.hmz.jpg&#39;);
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-color: var(--primary-light);
-                ">
-                    <div class="nav-bar" style="position: absolute; top: 0; left: 0; right: 0; background: transparent; z-index: 10;">
-                        <div class="back-arrow" style="color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">←</div>
-                        <div class="nav-title" style="color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">VR看房</div>
-                    </div>
-                    
-                    <!-- 浮动信息卡片 -->
-                    <div class="vr-info-card" style="z-index: 3;">
-                        <div class="vr-title">两室两厅一卫</div>
-                        <div class="vr-meta">建面约89㎡ · 西边套</div>
-                        <div class="vr-meta">经典两居，南北通透，采光充足</div>
-                        <button class="btn-primary" style="width: 100%; height: 36px; margin-top: 12px;">查看详情</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 页面6：户型详情页 -->
-            <div class="phone-container">
-                <div class="scroll-y" style="height: 100%; padding-bottom: 20px;">
-                    <div class="nav-bar">
-                        <div class="back-arrow">←</div>
-                        <div class="nav-title">户型详情</div>
-                    </div>
-
-                    <div class="card" style="margin-top: 16px;">
-                        <div class="house-detail-top">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <div class="title">两室两厅一卫 | 建面89㎡</div>
-                                <button class="vr-btn-small">查看VR</button>
-                            </div>
-                            <img src="https://wximg.jiugai.net/3a05c213-591a-5c88-444a-8b4cfa2422b2/ArticleContent/cburhule.ouj.jpg" class="house-img" alt="户型图">
-                            <div style="font-size: 14px; color: var(--text-main); margin-bottom: 12px;">改善型三居，全明格局，双卧朝南</div>
-                            <div class="feature-box">
-                                <span class="tag tag-primary">东边套</span>
-                                <span class="tag tag-primary">南北通透</span>
-                            </div>
-                            <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                <div style="display: flex; align-items: center; gap: 4px;">
-                                    <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">6700元/㎡</span>
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 4px;">
-                                    <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">25000元/㎡</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-title">
-                        该户型可售房源
-                    </div>
-
-                    <div class="card" style="margin-top: 8px;">
-                        <div class="house-item">
-                            <div class="house-info">
-                                <div class="house-title">01-1001 | 10层</div>
-                                <div class="house-desc">89㎡ · 10层/18层 · 南北通透 · 毛坯</div>
-                                <div class="house-tags">
-                                    <span class="tag tag-primary">东边套</span>
-                                    <span class="tag tag-success">在售</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                <div style="font-size: 12px; color: var(--text-sub);">⭐ 320</div>
-                                <button class="btn-outline-gray">已收藏</button>
-                            </div>
-                        </div>
-
-                        <div class="house-item" style="border-top: 1px solid var(--border); margin-bottom: 0;">
-                            <div class="house-info">
-                                <div class="house-title">02-0802 | 8层</div>
-                                <div class="house-desc">89㎡ · 8层/18层 · 南北通透 · 毛坯</div>
-                                <div class="house-tags">
-                                    <span class="tag tag-primary">东边套</span>
-                                    <span class="tag tag-success">在售</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                <div style="font-size: 12px; color: var(--text-sub);">⭐ 285</div>
-                                <button class="btn-outline-gray">收藏</button>
-                            </div>
-                        </div>
-
-                        <div class="house-item" style="border-top: 1px solid var(--border); margin-bottom: 0;">
-                            <div class="house-info">
-                                <div class="house-title">03-1201 | 12层</div>
-                                <div class="house-desc">89㎡ · 12层/18层 · 南北通透 · 毛坯</div>
-                                <div class="house-tags">
-                                    <span class="tag tag-primary">东边套</span>
-                                    <span class="tag tag-success">在售</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                <div style="font-size: 12px; color: var(--text-sub);">⭐ 198</div>
-                                <button class="btn-outline-gray">收藏</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="tab-bar">
+                <div class="tab-item active"><div class="tab-icon">🔍</div><div>找房</div></div>
+                <div class="tab-item"><div class="tab-icon">👤</div><div>我的</div></div>
             </div>
         </div>
 
-        <!-- ==================== 第三排：3个页面 ==================== -->
-        <div class="phone-row">
-            <!-- ==================== 页面7：我的 ==================== -->
-            <div class="phone-container">
-                <div class="scroll-y" style="height: calc(100% - 60px); padding-bottom: 20px;">
-                    <div class="user-header">
-                        <div class="user-avatar">👤</div>
-                        <div class="user-name">安居用户</div>
-                    </div>
-
-                    <div class="card" style="margin-top: 16px;">
-                        <div class="menu-item">
-                            <div class="menu-icon">🏘️</div>
-                            <div class="menu-text">小区收藏</div>
-                            <div class="menu-arrow">&gt;</div>
+        <!-- 页面3：小区详情 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height: calc(100% - 60px);">
+                <div class="nav-bar" style="background:transparent;position:absolute;top:0;left:0;right:0;color:#fff">
+                    <div class="back-arrow" style="color:#fff">←</div>
+                    <div class="nav-title" style="color:#fff">小区详情</div>
+                </div>
+                <div style="width:100%;height:200px;background:url(https://via.placeholder.com/375x200/E8F0FF/2663FD?text=小区实景) center/cover no-repeat"></div>
+                <div class="card" style="margin-top:-12px;padding:16px">
+                    <div style="font-weight:700;font-size:20px;margin-bottom:8px">鲁疃村定向安置房</div>
+                    <div style="font-size:14px;color:var(--text-sub);margin-bottom:12px">建成：2023年 | 总户数：1780户</div>
+                    <div style="display:flex;gap:12px"><span class="tag tag-success">在售</span> <span class="tag tag-primary">三定三限</span></div>
+                    <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
+                        <div>
+                            <div style="font-size:12px">可安置：<span style="color:var(--primary);font-weight:600">6432元/㎡</span></div>
+                            <div style="font-size:12px">超出面积：<span style="color:var(--primary);font-weight:600">24000元/㎡</span></div>
                         </div>
-                        <div class="menu-item">
-                            <div class="menu-icon">🏠</div>
-                            <div class="menu-text">房源收藏</div>
-                            <div class="menu-arrow">&gt;</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="menu-item">
-                            <div class="menu-icon">📞</div>
-                            <div class="menu-text">安居咨询</div>
-                            
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 40px; font-size: 12px; color: var(--text-sub);">
-                        昌平安居项目 · 版本 1.0.0
+                        <button class="btn-outline">收藏小区</button>
                     </div>
                 </div>
-
-                <div class="tab-bar">
-                    <div class="tab-item active">
-                        <div class="tab-icon">🔍</div>
-                        <div>找房</div>
+                <div class="section-title">小区配套</div>
+                <div style="width:calc(100% - 32px);height:150px;background:url(https://via.placeholder.com/343x150/E8F0FF/2663FD?text=配套地图) center/cover no-repeat;margin:0 16px;border-radius:12px"></div>
+                <div class="section-title">小区户型</div>
+                <div style="padding:0 16px;display:flex;gap:12px;overflow-x:auto">
+                    <div style="min-width:120px;background:#fff;border-radius:12px;padding:12px;text-align:center">
+                        <div style="width:100%;height:80px;background:var(--primary-light);border-radius:8px;margin-bottom:8px"></div>
+                        <div>一室一厅</div>
+                        <div style="font-size:12px;color:var(--text-sub)">55㎡</div>
                     </div>
-                    <div class="tab-item">
-                        <div class="tab-icon">👤</div>
-                        <div>我的</div>
+                    <div style="min-width:120px;background:#fff;border-radius:12px;padding:12px;text-align:center">
+                        <div style="width:100%;height:80px;background:var(--primary-light);border-radius:8px;margin-bottom:8px"></div>
+                        <div>两室两厅</div>
+                        <div style="font-size:12px;color:var(--text-sub)">89㎡</div>
                     </div>
                 </div>
             </div>
-
-            <!-- ==================== 页面8：小区收藏 ==================== -->
-            <div class="phone-container">
-                <div class="scroll-y" style="height: calc(100% - 60px); padding-bottom: 20px;">
-                    <div class="nav-bar">
-                        <div class="back-arrow">←</div>
-                        <div class="nav-title">小区收藏</div>
-                    </div>
-
-                    <div style="background-color: var(--white);">
-                        <div class="fav-community-item">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div class="fav-community-img" style="background-image: url(&#39;https://via.placeholder.com/100x80/E8F0FF/2663FD?text=鲁疃村&#39;);"></div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-top: 8px;">⭐ 1850</div>
-                                <div style="font-size: 12px; color: var(--text-sub); text-align: center;">👁️ 29000</div>
-                            </div>
-                            <div class="fav-community-info">
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                                        <div class="fav-community-name">鲁疃村定向安置房</div>
-                                        <button class="btn-outline-gray">取消</button>
-                                    </div>
-                                    <div class="fav-community-desc">北京市昌平区北七家镇鲁疃村</div>
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                        <span class="tag tag-success">在售</span>
-                                        <span class="tag tag-primary">三定三限</span>
-                                    </div>
-                                </div>
-                                <div class="fav-community-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                    <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">6700元/㎡</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">25000元/㎡</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="fav-community-item">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div class="fav-community-img" style="background-image: url(&#39;https://via.placeholder.com/100x80/E8F0FF/2663FD?text=北七家&#39;);"></div>
-                                <div style="font-size: 12px; color: var(--text-sub); margin-top: 8px;">⭐ 1520</div>
-                                <div style="font-size: 12px; color: var(--text-sub); text-align: center;">👁️ 25000</div>
-                            </div>
-                            <div class="fav-community-info">
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                                        <div class="fav-community-name">北七家定向安置房</div>
-                                        <button class="btn-outline-gray">取消</button>
-                                    </div>
-                                    <div class="fav-community-desc">北京市昌平区北七家镇，定泗路以北</div>
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                        <span class="tag tag-success">在售</span>
-                                        <span class="tag tag-primary">三定三限</span>
-                                    </div>
-                                </div>
-                                <div class="fav-community-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);">
-                                    <div style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary); color: var(--white);">可安置</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">5896元/㎡</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 4px;">
-                                            <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background-color: var(--primary-light); color: var(--primary);">超出</span>
-                                            <span style="font-size: 12px; font-weight: 600; color: var(--text-main);">23000元/㎡</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-            </div>
-
-            <!-- ==================== 页面9：房源收藏 ==================== -->
-            <div class="phone-container">
-                <div class="scroll-y" style="height: calc(100% - 60px); padding-bottom: 20px;">
-                    <div class="nav-bar">
-                        <div class="back-arrow">←</div>
-                        <div class="nav-title">房源收藏</div>
-                    </div>
-
-                    <div style="background-color: var(--white);">
-                        <div class="fav-house-item">
-                            <div class="fav-house-info-left">
-                                <div class="fav-house-title">LT-01-05-03 | 两室两厅一卫</div>
-                                <div class="fav-house-desc">鲁疃村定向安置房 · 89㎡ · 5层/18层</div>
-                                <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                    <span class="tag tag-success">在售</span>
-                                    <span class="tag tag-primary">中间户</span>
-                                    <span class="tag tag-warning">南北通透</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                <div style="font-size: 12px; color: var(--text-sub);">⭐ 320</div>
-                                <button class="btn-outline-gray">取消</button>
-                            </div>
-                        </div>
-
-                        <div class="fav-house-item">
-                            <div class="fav-house-info-left">
-                                <div class="fav-house-title">02-12-08 | 三室两厅一卫</div>
-                                <div class="fav-house-desc">北七家定向安置房 · 105㎡ · 12层/18层</div>
-                                <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                    <span class="tag tag-success">在售</span>
-                                    <span class="tag tag-primary">东边套</span>
-                                    <span class="tag tag-warning">朝南</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                <div style="font-size: 12px; color: var(--text-sub);">⭐ 285</div>
-                                <button class="btn-outline-gray">取消</button>
-                            </div>
-                        </div>
-
-                        <div class="fav-house-item sold">
-                            <div class="fav-house-info-left">
-                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-                                    <div class="fav-house-title">03-03-02 | 一室一厅一卫</div>
-                                </div>
-                                <div class="fav-house-desc">岭上村定向安置房 · 55㎡ · 3层/18层</div>
-                                <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-                                    <span class="tag tag-primary">西边套</span>
-                                    <span class="tag tag-warning">朝北</span>
-                                 <span class="tag tag-warning">已售</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                <div style="font-size: 12px; color: var(--text-sub);">⭐ 198</div>
-                                <button class="btn-outline-gray">取消</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
+            <div class="tab-bar">
+                <div class="tab-item active"><div class="tab-icon">🔍</div><div>找房</div></div>
+                <div class="tab-item"><div class="tab-icon">👤</div><div>我的</div></div>
             </div>
         </div>
     </div>
 
+    <!-- 第二排 3个页面 -->
+    <div class="phone-row">
+        <!-- 页面4：户型列表 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height:100%">
+                <div class="nav-bar">
+                    <div class="back-arrow">←</div>
+                    <div class="nav-title">户型列表</div>
+                </div>
+                <div style="padding:16px;border-bottom:1px solid var(--border);background:#fff;display:flex;gap:12px">
+                    <div style="width:120px;height:90px;background:var(--primary-light);border-radius:8px"></div>
+                    <div style="flex:1">
+                        <div style="font-weight:600;margin-bottom:4px">一室一厅一卫</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">建面55㎡ | 南北通透</div>
+                        <button class="btn-outline" style="font-size:12px">查看VR</button>
+                    </div>
+                </div>
+                <div style="padding:16px;border-bottom:1px solid var(--border);background:#fff;display:flex;gap:12px">
+                    <div style="width:120px;height:90px;background:var(--primary-light);border-radius:8px"></div>
+                    <div style="flex:1">
+                        <div style="font-weight:600;margin-bottom:4px">两室两厅一卫</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">建面89㎡ | 方正户型</div>
+                        <button class="btn-outline" style="font-size:12px">查看VR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</body></html>
+        <!-- 页面5：VR看房 -->
+        <div class="phone-container">
+            <div style="width:100%;height:100%;background:var(--primary-light);position:relative;display:flex;align-items:center;justify-content:center;color:var(--primary)">
+                <div class="nav-bar" style="background:transparent;position:absolute;top:0;left:0;right:0">
+                    <div class="back-arrow" style="color:#fff">←</div>
+                    <div class="nav-title" style="color:#fff">VR看房</div>
+                </div>
+                <div style="font-size:40px">VR全景</div>
+                <div style="position:absolute;bottom:20px;left:16px;right:16px;background:#fff;border-radius:12px;padding:16px">
+                    <div style="font-weight:700;font-size:18px;margin-bottom:4px">两室两厅一卫</div>
+                    <div style="font-size:14px;color:var(--text-sub);margin-bottom:12px">89㎡ | 南北通透</div>
+                    <button class="btn-primary">查看户型详情</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面6：户型详情 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height:100%">
+                <div class="nav-bar">
+                    <div class="back-arrow">←</div>
+                    <div class="nav-title">户型详情</div>
+                </div>
+                <div class="card" style="margin-top:16px;padding:16px">
+                    <div style="font-weight:600;margin-bottom:12px">两室两厅一卫 | 建面89㎡</div>
+                    <div style="width:100%;height:200px;background:url(https://via.placeholder.com/343x200/E8F0FF/2663FD?text=户型图) center/cover no-repeat;border-radius:8px;margin-bottom:12px"></div>
+                    <div style="display:flex;gap:8px;margin-bottom:12px">
+                        <span class="tag tag-primary">南北通透</span>
+                        <span class="tag tag-primary">全明户型</span>
+                    </div>
+                    <div style="font-size:14px;color:var(--text-sub)">方正格局，动静分区，采光充足</div>
+                </div>
+                <div class="section-title">可售房源</div>
+                <div class="card">
+                    <div style="padding:16px;border-bottom:1px solid var(--border)">
+                        <div style="font-weight:600">01-1001 | 10层</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin:4px 0">89㎡ · 毛坯 · 南北</div>
+                        <div><span class="tag tag-success">在售</span></div>
+                    </div>
+                    <div style="padding:16px">
+                        <div style="font-weight:600">02-0802 | 8层</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin:4px 0">89㎡ · 毛坯 · 南北</div>
+                        <div><span class="tag tag-success">在售</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第三排 3个页面 -->
+    <div class="phone-row">
+        <!-- 页面7：我的 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height: calc(100% - 60px);">
+                <div class="user-header">
+                    <div class="user-avatar">👤</div>
+                    <div style="font-weight:600">安居用户</div>
+                </div>
+                <div class="card" style="margin-top:16px">
+                    <div class="menu-item">
+                        <div class="menu-icon">🏘️</div>
+                        <div>小区收藏</div>
+                        <div style="margin-left:auto;color:var(--text-sub)">></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon">🏠</div>
+                        <div>房源收藏</div>
+                        <div style="margin-left:auto;color:var(--text-sub)">></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-item">
+                        <div class="menu-icon">📞</div>
+                        <div>安居咨询</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:40px;font-size:12px;color:var(--text-sub)">昌平安居房超市 v1.0</div>
+            </div>
+            <div class="tab-bar">
+                <div class="tab-item"><div class="tab-icon">🔍</div><div>找房</div></div>
+                <div class="tab-item active"><div class="tab-icon">👤</div><div>我的</div></div>
+            </div>
+        </div>
+
+        <!-- 页面8：小区收藏 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height: calc(100% - 60px);">
+                <div class="nav-bar">
+                    <div class="back-arrow">←</div>
+                    <div class="nav-title">小区收藏</div>
+                </div>
+                <div class="fav-community-item">
+                    <div class="fav-community-img"></div>
+                    <div style="flex:1">
+                        <div style="font-weight:600;margin-bottom:4px">鲁疃村定向安置房</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">昌平区北七家镇</div>
+                        <div style="color:var(--primary);font-weight:600">6432元/㎡</div>
+                    </div>
+                    <button class="btn-outline" style="align-self:center">取消收藏</button>
+                </div>
+                <div class="fav-community-item">
+                    <div class="fav-community-img"></div>
+                    <div style="flex:1">
+                        <div style="font-weight:600;margin-bottom:4px">小沙河安置房</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">昌平区沙河镇</div>
+                        <div style="color:var(--primary);font-weight:600">6700元/㎡</div>
+                    </div>
+                    <button class="btn-outline" style="align-self:center">取消收藏</button>
+                </div>
+            </div>
+            <div class="tab-bar">
+                <div class="tab-item"><div class="tab-icon">🔍</div><div>找房</div></div>
+                <div class="tab-item active"><div class="tab-icon">👤</div><div>我的</div></div>
+            </div>
+        </div>
+
+        <!-- 页面9：房源收藏 -->
+        <div class="phone-container">
+            <div class="scroll-y" style="height: calc(100% - 60px);">
+                <div class="nav-bar">
+                    <div class="back-arrow">←</div>
+                    <div class="nav-title">房源收藏</div>
+                </div>
+                <div style="padding:16px;border-bottom:1px solid var(--border);background:#fff">
+                    <div style="font-weight:600;margin-bottom:4px">01-0503 两室两厅一卫</div>
+                    <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">鲁疃村安置房 | 89㎡ | 5层</div>
+                    <div><span class="tag tag-success">在售</span></div>
+                    <button class="btn-outline" style="margin-top:8px;font-size:12px">取消收藏</button>
+                </div>
+                <div style="padding:16px;border-bottom:1px solid var(--border);background:#fff">
+                    <div style="font-weight:600;margin-bottom:4px">02-1201 三室两厅一卫</div>
+                    <div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">北七家安置房 | 105㎡ | 12层</div>
+                    <div><span class="tag tag-success">在售</span></div>
+                    <button class="btn-outline" style="margin-top:8px;font-size:12px">取消收藏</button>
+                </div>
+            </div>
+            <div class="tab-bar">
+                <div class="tab-item"><div class="tab-icon">🔍</div><div>找房</div></div>
+                <div class="tab-item active"><div class="tab-icon">👤</div><div>我的</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
